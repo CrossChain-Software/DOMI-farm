@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.1;
+pragma solidity ^0.8.1;
 
-import "./IlluviumPoolBase.sol";
+import "./PoolBase.sol";
 
 /**
  * @title Illuvium Core Pool
