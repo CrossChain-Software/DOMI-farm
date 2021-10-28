@@ -49,7 +49,7 @@ import "./ERC20Receiver.sol";
  *
  * @author Basil Gorin
  */
-contract IlluviumERC20 is AccessControl {
+contract DominoesERC20 is AccessControl {
   /**
    * @dev Smart contract unique identifier, a random number
    * @dev Should be regenerated each time smart contact source code is changed

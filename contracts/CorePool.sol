@@ -126,7 +126,7 @@ contract IlluviumCorePool is IlluviumPoolBase {
         }
         require(usersLockingWeight > 0, "zero locking weight");
 
-        transferIlvFrom(msg.sender, address(this), _rewardsAmount);
+        transferDomiFrom(msg.sender, address(this), _rewardsAmount);
 
         vaultRewardsPerWeight += rewardToWeight(_rewardsAmount, usersLockingWeight);
 
@@ -282,7 +282,7 @@ contract IlluviumCorePool is IlluviumPoolBase {
         user.subVaultRewards = weightToReward(user.totalWeight, vaultRewardsPerWeight);
 
         // transfer fails if pool ILV balance is not enough - which is a desired behavior
-        transferIlv(_staker, pendingVaultClaim);
+        transferDomi(_staker, pendingVaultClaim);
 
         emit VaultRewardsClaimed(msg.sender, _staker, pendingVaultClaim);
     }

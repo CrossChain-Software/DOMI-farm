@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.1;
 
-import "./ILinkedToILV.sol";
+import "./ILinkedToDOMI.sol";
 
 /**
- * @title Illuvium Pool
+ * @title Dominoes Pool
  *
- * @notice An abstraction representing a pool, see IlluviumPoolBase for details
+ * @notice An abstraction representing a pool, see DominoesPoolBase for details
  *
  * @author Pedro Bergamini, reviewed by Basil Gorin
  */
-interface IPool is ILinkedToILV {
+interface IPool is ILinkedToDOMI {
     /**
      * @dev Deposit is a key data structure used in staking,
      *      it represents a unit of stake with its amount, weight and term (time interval)
@@ -30,7 +30,7 @@ interface IPool is ILinkedToILV {
 
     // for the rest of the functions see Soldoc in IlluviumPoolBase
 
-    function silv() external view returns (address);
+    function sdomi() external view returns (address);
 
     function poolToken() external view returns (address);
 
@@ -55,18 +55,18 @@ interface IPool is ILinkedToILV {
     function stake(
         uint256 _amount,
         uint64 _lockedUntil,
-        bool useSILV
+        bool useSDOMI
     ) external;
 
     function unstake(
         uint256 _depositId,
         uint256 _amount,
-        bool useSILV
+        bool useSDOMI
     ) external;
 
     function sync() external;
 
-    function processRewards(bool useSILV) external;
+    function processRewards(bool useSDOMI) external;
 
     function setWeight(uint32 _weight) external;
 }
